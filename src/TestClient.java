@@ -65,7 +65,7 @@ public class TestClient {
 				
 				Student student = responseOne.readEntity(Student.class);
 				System.out.println(student);
-
+				
 				responseOne.close();
 				break;
 
@@ -138,6 +138,10 @@ public class TestClient {
 		System.out.println("Good Bye!");
 	}
 	
+	/**
+	 * This method presents the menu of options available in the Student Management System.
+	 * @return nil.
+	 */
 	
 	public static void printMenu() {
 		System.out.println();
@@ -150,12 +154,23 @@ public class TestClient {
 		System.out.println("[6] - Exit program");
 	}
 	
+	/**
+	 * This method allows manual input of menu selection.
+	 * @return int menu selection.
+	 */
+	
 	public static int menuSelection() {
 		
 		Scanner sc = new Scanner(System.in);
 		int choice = sc.nextInt();
 		return choice;
 	}
+	
+	/**
+	 * This method allows manual input of a student's id. It's used in various places throughout the code
+	 * where manual selection of id is necessary.
+	 * @return int student's id.
+	 */
 	
 	public static String inputId() {
 		
@@ -171,6 +186,10 @@ public class TestClient {
 		return id;
 	}
 	
+	/**
+	 * This method creates a new Student object and allows you to manually input values to its attributes.
+	 * @return Student object
+	 */
 	public static Student newStudentInfo() {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		Student newStudent = new Student();
@@ -190,7 +209,11 @@ public class TestClient {
 		
 		return newStudent;
 	}
-	
+	/**
+	 * This method creates a new Student object and allows you to manually input values to those attributes that you 
+	 * are allowed to modify once the Student is persisted to the database.
+	 * @return Student object
+	 */
 	public static Student updatedStudent() {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		Student updatedStudent = new Student();
